@@ -59,5 +59,7 @@ jobs:
       run: npm install
     - name: Playwright Browsers Install
       run:  npx playwright install  
+    - name: Run Localhost
+      run: npm run start
     - name: Unit Test
       run: npm run test:ui
