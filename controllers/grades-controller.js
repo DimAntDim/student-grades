@@ -12,7 +12,7 @@ function setup(app, grades) {
     res.send('loaderio-97355a48d08652424ffe033c5cf3d460');
   });
 
-  app.get('/my-grades', function(req, res) {
+  app.get('/My-Grades', function(req, res) {
     let model = { title: "My Grades", grades };
     res.render('my-grades', model);
   });
@@ -22,7 +22,7 @@ function setup(app, grades) {
     res.render('about', model);
   });
 
-  app.get('/add-grade', function(req, res) {
+  app.get('/Add-grade', function(req, res) {
     let model = { title: "Add Grade" };
     res.render('add-grade', model);
   });
@@ -31,7 +31,7 @@ function setup(app, grades) {
     return typeof(p) !== 'string' || p.trim().length === 0;
   }
 
-  app.post('/add-grade', function(req, res) {
+  app.post('/Add-grade', function(req, res) {
     if (paramEmpty(req.body.subject) || paramEmpty(req.body.value)) {
       let model = {
         title: "Add Grade", 
@@ -45,7 +45,7 @@ function setup(app, grades) {
       value: req.body.value
     };
     grades.push(grade);
-    res.redirect('/grades');
+    res.redirect('/my-grades');
   });
 }
 
